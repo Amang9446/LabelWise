@@ -1,19 +1,26 @@
 import { StyleProp, Text, TextProps, TextStyle } from "react-native";
 
+type TypographyProps = {
+  children: React.ReactNode;
+  size: number;
+  style?: StyleProp<TextStyle>;
+  color?: string;
+};
+
 const Typography = {
   regular: ({
     children,
     size,
     style,
+    color = "black",
     ...props
-  }: {
-    children: React.ReactNode;
-    size: number;
-    style?: StyleProp<TextStyle>;
-  } & TextProps) => (
+  }: TypographyProps & TextProps) => (
     <Text
       {...props}
-      style={[{ fontFamily: "DMSans_400Regular", fontSize: size }, style]}
+      style={[
+        { fontFamily: "Montserrat_400Regular", fontSize: size, color },
+        style,
+      ]}
     >
       {children}
     </Text>
@@ -22,15 +29,15 @@ const Typography = {
     children,
     size,
     style,
+    color = "black",
     ...props
-  }: {
-    children: React.ReactNode;
-    size: number;
-    style?: StyleProp<TextStyle>;
-  } & TextProps) => (
+  }: TypographyProps & TextProps) => (
     <Text
       {...props}
-      style={[{ fontFamily: "DMSans_500Medium", fontSize: size }, style]}
+      style={[
+        { fontFamily: "Montserrat_500Medium", fontSize: size, color },
+        style,
+      ]}
     >
       {children}
     </Text>
@@ -39,15 +46,15 @@ const Typography = {
     children,
     size,
     style,
+    color = "black",
     ...props
-  }: {
-    children: React.ReactNode;
-    size: number;
-    style?: StyleProp<TextStyle>;
-  } & TextProps) => (
+  }: TypographyProps & TextProps) => (
     <Text
       {...props}
-      style={[{ fontFamily: "DMSans_600SemiBold", fontSize: size }, style]}
+      style={[
+        { fontFamily: "Montserrat_600SemiBold", fontSize: size, color },
+        style,
+      ]}
     >
       {children}
     </Text>
@@ -56,15 +63,15 @@ const Typography = {
     children,
     size,
     style,
+    color = "black",
     ...props
-  }: {
-    children: React.ReactNode;
-    size: number;
-    style?: StyleProp<TextStyle>;
-  } & TextProps) => (
+  }: TypographyProps & TextProps) => (
     <Text
       {...props}
-      style={[{ fontFamily: "DMSans_700Bold", fontSize: size }, style]}
+      style={[
+        { fontFamily: "Montserrat_700Bold", fontSize: size, color },
+        style,
+      ]}
     >
       {children}
     </Text>

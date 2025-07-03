@@ -1,23 +1,27 @@
 import {
-  DMSans_400Regular,
-  DMSans_500Medium,
-  DMSans_600SemiBold,
-  DMSans_700Bold,
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_600SemiBold,
+  Montserrat_700Bold,
   useFonts,
-} from "@expo-google-fonts/dm-sans";
+} from "@expo-google-fonts/montserrat";
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
-    DMSans_400Regular,
-    DMSans_500Medium,
-    DMSans_600SemiBold,
-    DMSans_700Bold,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_600SemiBold,
+    Montserrat_700Bold,
   });
 
   if (!fontsLoaded) {
     return null;
   }
 
-  return <Stack />;
+  return (
+    <Stack>
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+    </Stack>
+  );
 }
