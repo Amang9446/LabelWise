@@ -1,3 +1,4 @@
+import { normalize } from "@/utils/normilize";
 import { StyleProp, Text, TextProps, TextStyle } from "react-native";
 
 type TypographyProps = {
@@ -18,7 +19,11 @@ const Typography = {
     <Text
       {...props}
       style={[
-        { fontFamily: "Montserrat_400Regular", fontSize: size, color },
+        {
+          fontFamily: "Montserrat_400Regular",
+          fontSize: normalize(size),
+          color,
+        },
         style,
       ]}
     >
@@ -35,7 +40,11 @@ const Typography = {
     <Text
       {...props}
       style={[
-        { fontFamily: "Montserrat_500Medium", fontSize: size, color },
+        {
+          fontFamily: "Montserrat_500Medium",
+          fontSize: normalize(size),
+          color,
+        },
         style,
       ]}
     >
@@ -52,7 +61,11 @@ const Typography = {
     <Text
       {...props}
       style={[
-        { fontFamily: "Montserrat_600SemiBold", fontSize: size, color },
+        {
+          fontFamily: "Montserrat_600SemiBold",
+          fontSize: normalize(size),
+          color,
+        },
         style,
       ]}
     >
@@ -69,7 +82,11 @@ const Typography = {
     <Text
       {...props}
       style={[
-        { fontFamily: "Montserrat_700Bold", fontSize: size, color },
+        {
+          fontFamily: "Montserrat_700Bold",
+          fontSize: normalize(size),
+          color,
+        },
         style,
       ]}
     >
